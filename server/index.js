@@ -9,6 +9,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.use('/api/cities', require('./routes/cities'));
+app.use('/api/weather', require('./routes/weather'));
+
 app.get('/', (req, res) => {
   res.send('Weather App.');
 });
